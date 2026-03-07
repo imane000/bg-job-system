@@ -91,6 +91,29 @@ curl.exe -X POST "http://127.0.0.1:8000/jobs?name=Imane"
 curl.exe "http://127.0.0.1:8000/jobs/<JOB_ID>"
 ```
 
+## Example Response
+
+### Job creation
+
+```json
+{
+  "job_id": "7e428436-9726-499a-887b-90122cde7abc",
+  "status": "queued"
+}
+```
+
+### Job completed
+
+```json
+{
+  "job_id": "7e428436-9726-499a-887b-90122cde7abc",
+  "status": "finished",
+  "result": {
+    "message": "Job done for Imane"
+  }
+}
+```
+
 ## Notes
 
 - On Windows, the worker uses `SimpleWorker` because the default RQ worker uses `os.fork()`, which is not available on Windows.
